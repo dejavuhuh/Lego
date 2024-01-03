@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1749fa3c-3f9e-4e66-8e3e-fb5b595cf0ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lego-bom/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lego-file/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lego-lang/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lego-rollback-sql/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1749fa3c-3f9e-4e66-8e3e-fb5b595cf0ab" name="Changes" comment="init" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,10 +18,12 @@
       </list>
     </option>
   </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
-  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="dejavu" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider">{
@@ -80,7 +76,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "google-java-format.settings",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -106,7 +102,7 @@
       <module name="lego-rollback-sql" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGenerator" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +114,7 @@
       <module name="lego-rollback-sql" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGenerator" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,7 +130,7 @@
       <module name="lego-rollback-sql" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGenerator" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,11 +142,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RollbackSqlGeneratorTest.runAllTestCases.[2] DELETE FROM `user` WHERE id &lt; 4;, INSERT INTO `user` (id, name, age, email) VALUES (1, 'Jone', 18, 'test1@baomidou.com'), (2, 'Jack', 20, 'test2@baomidou.com'), (3, 'Tom', 28, 'test3@baomidou.com');" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RollbackSqlGeneratorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lego-rollback-sql" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGenerator" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.dejavuhuh.lego.rollback.sql" />
+      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="[engine:junit-jupiter]/[class:com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest]/[test-template:runAllTestCases(java.lang.String, java.lang.String)]/[test-template-invocation:#2]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lego-rollback-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGenerator" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,26 +177,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RollbackSqlGeneratorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lego-rollback-sql" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.dejavuhuh.lego.rollback.sql" />
-      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.RollbackSqlGeneratorTest.runAllTestCases" />
-        <item itemvalue="JUnit.RollbackSqlGeneratorTest.runAllTestCases.[2] DELETE FROM `user` WHERE id &lt; 4;, INSERT INTO `user` (id, name, age, email) VALUES (1, 'Jone', 18, 'test1@baomidou.com'), (2, 'Jack', 20, 'test2@baomidou.com'), (3, 'Tom', 28, 'test3@baomidou.com');" />
+        <item itemvalue="JUnit.[engine:junit-jupiter]/[class:com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest]/[test-template:runAllTestCases(java.lang.String, java.lang.String)]/[test-template-invocation:#2]" />
         <item itemvalue="JUnit.RollbackSqlGeneratorTest" />
         <item itemvalue="JUnit.RollbackSqlGeneratorTest.test" />
         <item itemvalue="Application.Utils" />
@@ -213,12 +209,46 @@
       <workItem from="1704187514549" duration="8000" />
       <workItem from="1704187530440" duration="34203000" />
       <workItem from="1704273748715" duration="165000" />
-      <workItem from="1704273921988" duration="581000" />
+      <workItem from="1704273921988" duration="8947000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1704275264413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704275264413</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <option name="closed" value="true" />
+      <created>1704296813910</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704296813910</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <option name="closed" value="true" />
+      <created>1704297203134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704297203134</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
