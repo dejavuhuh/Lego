@@ -2,9 +2,11 @@ package com.github.dejavuhuh.lego.rollback.sql;
 
 import com.alibaba.druid.DbType;
 import com.alibaba.druid.sql.SQLUtils;
+import com.alibaba.druid.sql.SQLUtils.FormatOption;
 import com.alibaba.druid.sql.ast.SQLStatement;
 import com.alibaba.druid.sql.ast.statement.SQLCreateTableStatement;
 import com.alibaba.druid.sql.ast.statement.SQLDeleteStatement;
+import com.alibaba.druid.sql.ast.statement.SQLDropTableStatement;
 import com.alibaba.druid.sql.ast.statement.SQLInsertInto;
 import com.alibaba.druid.sql.ast.statement.SQLUpdateStatement;
 
@@ -23,40 +25,41 @@ import javax.sql.DataSource;
  */
 public class RollbackSqlGenerator {
 
-    private final DataSource dataSource;
-    private final JdbcTemplate jdbcTemplate;
+    private final CreateTableRollbacker createTableRollbacker;
+    private final DeleteRollbacker deleteRollbacker;
+    private final InsertRollbacker insertRollbacker;
+    private final UpdateRollbacker updateRollbacker;
 
     public RollbackSqlGenerator(DataSource dataSource) {
-        this.dataSource = dataSource;
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        this.createTableRollbacker = new CreateTableRollbacker();
+        this.deleteRollbacker = new DeleteRollbacker(jdbcTemplate);
+        this.insertRollbacker = new InsertRollbacker(jdbcTemplate);
+        this.updateRollbacker = new UpdateRollbacker(jdbcTemplate, dataSource);
     }
 
-    public List<SQLStatements> generate(String sql, DbType dbType) {
+    public List<SQLStatements> generate(String originalSQL, DbType dbType) {
 
-        List<SQLStatement> statements = SQLUtils.parseStatements(sql, dbType);
+        List<SQLStatement> statements = SQLUtils.parseStatements(originalSQL, dbType);
         List<SQLStatements> rollbackStatements = new ArrayList<>(statements.size());
         for (SQLStatement statement : statements) {
             SQLStatements rollbackStatement;
             if (statement instanceof SQLCreateTableStatement) {
-                rollbackStatement =
-                        new SQLStatements(
-                                new CreateTableRollbackSqlGenerator()
-                                        .generate((SQLCreateTableStatement) statement, dbType));
+                SQLDropTableStatement dropTableStatement =
+                        createTableRollbacker.generate((SQLCreateTableStatement) statement, dbType);
+                rollbackStatement = new SQLStatements(dropTableStatement);
             } else if (statement instanceof SQLDeleteStatement) {
-                rollbackStatement =
-                        new SQLStatements(
-                                new DeleteRollbackSqlGenerator(jdbcTemplate)
-                                        .generate((SQLDeleteStatement) statement, dbType));
+                SQLInsertInto insertIntoStatement =
+                        deleteRollbacker.generate((SQLDeleteStatement) statement, dbType);
+                rollbackStatement = new SQLStatements(insertIntoStatement);
             } else if (statement instanceof SQLInsertInto) {
-                rollbackStatement =
-                        new SQLStatements(
-                                new InsertRollbackSqlGenerator(jdbcTemplate)
-                                        .generate((SQLInsertInto) statement, dbType));
+                List<SQLDeleteStatement> deleteStatements =
+                        insertRollbacker.generate((SQLInsertInto) statement, dbType);
+                rollbackStatement = new SQLStatements(deleteStatements);
             } else if (statement instanceof SQLUpdateStatement) {
-                rollbackStatement =
-                        new SQLStatements(
-                                new UpdateRollbackSqlGenerator(jdbcTemplate, dataSource)
-                                        .generate((SQLUpdateStatement) statement, dbType));
+                List<SQLUpdateStatement> updateStatements =
+                        updateRollbacker.generate((SQLUpdateStatement) statement, dbType);
+                rollbackStatement = new SQLStatements(updateStatements);
             } else {
                 throw new UnsupportedOperationException("不支持对该SQL语句生成回滚语句：" + statement.toString());
             }
@@ -65,9 +68,9 @@ public class RollbackSqlGenerator {
         return rollbackStatements;
     }
 
-    public String generateToSQL(String sql, DbType dbType) {
+    public String generateToSQL(String originalSQL, DbType dbType) {
 
-        List<SQLStatements> rollbackStatements = generate(sql, dbType);
+        List<SQLStatements> rollbackStatements = generate(originalSQL, dbType);
         StringBuilder sb = new StringBuilder();
 
         // 倒序遍历
@@ -76,9 +79,9 @@ public class RollbackSqlGenerator {
             for (int j = 0; j < statements.size(); j++) {
                 SQLStatement statement = statements.get(j);
                 statement.setAfterSemi(true);
-                String rollbackSQL =
-                        SQLUtils.toSQLString(
-                                statement, dbType, new SQLUtils.FormatOption(true, false));
+                // upper case, no pretty
+                FormatOption formatOption = new FormatOption(true, false);
+                String rollbackSQL = SQLUtils.toSQLString(statement, dbType, formatOption);
                 sb.append(rollbackSQL);
 
                 // 最后一个循环，不加换行

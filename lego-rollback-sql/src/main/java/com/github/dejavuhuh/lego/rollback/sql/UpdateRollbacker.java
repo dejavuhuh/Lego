@@ -40,7 +40,7 @@ import javax.sql.DataSource;
  * @since 2024/1/2 22:03
  */
 @RequiredArgsConstructor
-public class UpdateRollbackSqlGenerator {
+public class UpdateRollbacker {
 
     private final JdbcTemplate jdbcTemplate;
     private final DataSource dataSource;

@@ -11,7 +11,7 @@ import com.alibaba.druid.sql.ast.statement.SQLExprTableSource;
  * @author wu.yue
  * @since 2024/1/1 03:15
  */
-public class CreateTableRollbackSqlGenerator {
+public class CreateTableRollbacker {
 
     public SQLDropTableStatement generate(SQLCreateTableStatement statement, DbType dbType) {
         SQLExprTableSource table = statement.getTableSource();

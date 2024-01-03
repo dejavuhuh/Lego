@@ -35,7 +35,7 @@ import java.util.Set;
  */
 @Component
 @RequiredArgsConstructor
-public class DeleteRollbackSqlGenerator {
+public class DeleteRollbacker {
 
     private final JdbcTemplate jdbcTemplate;
 

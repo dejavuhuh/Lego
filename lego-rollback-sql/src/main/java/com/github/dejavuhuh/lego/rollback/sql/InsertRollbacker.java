@@ -37,7 +37,7 @@ import java.util.Map;
  * @since 2024/1/2 16:40
  */
 @RequiredArgsConstructor
-public class InsertRollbackSqlGenerator {
+public class InsertRollbacker {
 
     private final JdbcTemplate jdbcTemplate;
 
