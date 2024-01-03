@@ -1,6 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1749fa3c-3f9e-4e66-8e3e-fb5b595cf0ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lego-bom/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-file/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-lang/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-rollback-sql/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
+    {
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="minikube" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2aEFinEyMom5C7HK4DcwGrYsgsK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Collections.executor": "Run",
+    "Application.InsertRollbackSqlGenerator.executor": "Run",
+    "Application.Utils.executor": "Debug",
+    "JUnit.RollbackSqlGeneratorTest.executor": "Debug",
+    "JUnit.RollbackSqlGeneratorTest.runAllTestCases.[2] DELETE FROM `user` WHERE id < 4;, INSERT INTO `user` (id, name, age, email) VALUES (1, 'Jone', 18, 'test1@baomidou.com'), (2, 'Jack', 20, 'test2@baomidou.com'), (3, 'Tom', 28, 'test3@baomidou.com');.executor": "Debug",
+    "JUnit.RollbackSqlGeneratorTest.runAllTestCases.executor": "Debug",
+    "JUnit.RollbackSqlGeneratorTest.test.executor": "Debug",
+    "Maven.lego [clean].executor": "Run",
+    "Maven.lego [compile].executor": "Run",
+    "Maven.lego-bom [clean].executor": "Run",
+    "Maven.lego-bom [install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "zulu-1.8",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/dejavu/Projects/github/dejavuhuh/lego/lego-rollback-sql/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "google-java-format.settings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.dejavuhuh.lego.rollback.sql" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lego-rollback-sql/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lego-rollback-sql/src/test/resources/db" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.RollbackSqlGeneratorTest.runAllTestCases">
+    <configuration name="Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.Utils" />
+      <module name="lego-rollback-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RollbackSqlGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lego-rollback-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.dejavuhuh.lego.rollback.sql" />
+      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest" />
+      <option name="METHOD_NAME" value="runAllTestCases(java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RollbackSqlGeneratorTest.runAllTestCases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lego-rollback-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.dejavuhuh.lego.rollback.sql" />
+      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest" />
+      <option name="METHOD_NAME" value="runAllTestCases(java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RollbackSqlGeneratorTest.runAllTestCases.[2] DELETE FROM `user` WHERE id &lt; 4;, INSERT INTO `user` (id, name, age, email) VALUES (1, 'Jone', 18, 'test1@baomidou.com'), (2, 'Jack', 20, 'test2@baomidou.com'), (3, 'Tom', 28, 'test3@baomidou.com');" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lego-rollback-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.dejavuhuh.lego.rollback.sql" />
+      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest" />
+      <option name="METHOD_NAME" value="runAllTestCases(java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest]/[test-template:runAllTestCases(java.lang.String, java.lang.String)]/[test-template-invocation:#2]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RollbackSqlGeneratorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lego-rollback-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.dejavuhuh.lego.rollback.sql.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.dejavuhuh.lego.rollback.sql" />
+      <option name="MAIN_CLASS_NAME" value="com.github.dejavuhuh.lego.rollback.sql.RollbackSqlGeneratorTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RollbackSqlGeneratorTest.runAllTestCases" />
+        <item itemvalue="JUnit.RollbackSqlGeneratorTest.runAllTestCases.[2] DELETE FROM `user` WHERE id &lt; 4;, INSERT INTO `user` (id, name, age, email) VALUES (1, 'Jone', 18, 'test1@baomidou.com'), (2, 'Jack', 20, 'test2@baomidou.com'), (3, 'Tom', 28, 'test3@baomidou.com');" />
+        <item itemvalue="JUnit.RollbackSqlGeneratorTest" />
+        <item itemvalue="JUnit.RollbackSqlGeneratorTest.test" />
+        <item itemvalue="Application.Utils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_392-corretto-1.8.0_392-3183f394aec4-22f8fbaa" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1749fa3c-3f9e-4e66-8e3e-fb5b595cf0ab" name="Changes" comment="" />
+      <created>1703875960571</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703875960571</updated>
+      <workItem from="1703875961606" duration="363000" />
+      <workItem from="1703876328896" duration="10951000" />
+      <workItem from="1703918803335" duration="22484000" />
+      <workItem from="1704187433513" duration="62000" />
+      <workItem from="1704187514549" duration="8000" />
+      <workItem from="1704187530440" duration="34203000" />
+      <workItem from="1704273748715" duration="165000" />
+      <workItem from="1704273921988" duration="581000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="rollbackStatements.get(1)" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
