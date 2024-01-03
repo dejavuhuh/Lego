@@ -45,16 +45,20 @@ public class RollbackSqlGenerator {
         for (SQLStatement statement : statements) {
             SQLStatements rollbackStatement;
             if (statement instanceof SQLCreateTableStatement) {
-                SQLDropTableStatement dropTableStatement = createTableRollbacker.generate((SQLCreateTableStatement) statement, dbType);
+                SQLDropTableStatement dropTableStatement =
+                        createTableRollbacker.generate((SQLCreateTableStatement) statement, dbType);
                 rollbackStatement = new SQLStatements(dropTableStatement);
             } else if (statement instanceof SQLDeleteStatement) {
-                SQLInsertInto insertIntoStatement = deleteRollbacker.generate((SQLDeleteStatement) statement, dbType);
+                SQLInsertInto insertIntoStatement =
+                        deleteRollbacker.generate((SQLDeleteStatement) statement, dbType);
                 rollbackStatement = new SQLStatements(insertIntoStatement);
             } else if (statement instanceof SQLInsertInto) {
-                List<SQLDeleteStatement> deleteStatements = insertRollbacker.generate((SQLInsertInto) statement, dbType);
+                List<SQLDeleteStatement> deleteStatements =
+                        insertRollbacker.generate((SQLInsertInto) statement, dbType);
                 rollbackStatement = new SQLStatements(deleteStatements);
             } else if (statement instanceof SQLUpdateStatement) {
-                List<SQLUpdateStatement> updateStatements = updateRollbacker.generate((SQLUpdateStatement) statement, dbType);
+                List<SQLUpdateStatement> updateStatements =
+                        updateRollbacker.generate((SQLUpdateStatement) statement, dbType);
                 rollbackStatement = new SQLStatements(updateStatements);
             } else {
                 throw new UnsupportedOperationException("不支持对该SQL语句生成回滚语句：" + statement.toString());
