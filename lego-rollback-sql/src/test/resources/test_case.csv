@@ -3,4 +3,4 @@
 "INSERT INTO `USER` (ID, NAME, AGE, EMAIL) VALUES (6, 'Jone6', 66, 'test6@baomidou.com'), (7, 'Jack7', 77, 'test7@baomidou.com');", "DELETE FROM `USER` WHERE ID = 6 AND NAME = 'Jone6' AND AGE = 66 AND EMAIL = 'test6@baomidou.com';
 DELETE FROM `USER` WHERE ID = 7 AND NAME = 'Jack7' AND AGE = 77 AND EMAIL = 'test7@baomidou.com';"
 "UPDATE `USER` SET AGE = AGE + 1, NAME = 'ASD' WHERE ID > 3;", "UPDATE `USER` SET AGE = 21, NAME = 'Sandy' WHERE ID = 4;
-UPDATE `USER` SET AGE = 24, NAME = 'Billie' WHERE ID = 5;"
+UPDATE `USER` SET AGE = 24, NAME = 'Billie' WHERE ID = 55;"
