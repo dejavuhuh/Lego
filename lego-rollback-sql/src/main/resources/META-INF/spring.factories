@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.github.dejavuhuh.lego.autoconfigure.RollbackSqlAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.github.dejavuhuh.lego.autoconfigure.RollbackSqlAutoConfiguration
