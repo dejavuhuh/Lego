@@ -1,0 +1,6 @@
+"CREATE TABLE t_user ( id BIGINT NOT NULL COMMENT '主键id', name VARCHAR(30) NULL DEFAULT NULL COMMENT '姓名', age INT NULL DEFAULT NULL COMMENT '年龄', email VARCHAR(50) NULL DEFAULT NULL COMMENT '邮箱', PRIMARY KEY (id) );", "DROP TABLE t_user;"
+"DELETE FROM t_user WHERE id < 4;", "INSERT INTO t_user (id, name, age, email) VALUES (1, 'Jone', 18, 'test1@baomidou.com'), (2, 'Jack', 20, 'test2@baomidou.com'), (3, 'Tom', 28, 'test3@baomidou.com');"
+"INSERT INTO t_user (id, name, age, email) VALUES (6, 'Jone6', 66, 'test6@baomidou.com'), (7, 'Jack7', 77, 'test7@baomidou.com');", "DELETE FROM t_user WHERE id = 6 AND name = 'Jone6' AND age = 66 AND email = 'test6@baomidou.com';
+DELETE FROM t_user WHERE id = 7 AND name = 'Jack7' AND age = 77 AND email = 'test7@baomidou.com';"
+"UPDATE t_user SET age = age + 1, name = 'ASD' WHERE id > 3;", "UPDATE t_user SET age = 21, name = 'Sandy' WHERE id = 4;
+UPDATE t_user SET age = 24, name = 'Billie' WHERE id = 5;"

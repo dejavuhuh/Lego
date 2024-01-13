@@ -25,11 +25,26 @@
         <url>https://github.com/dejavuhuh/lego</url>
     </scm>
 
+    <developers>
+        <developer>
+            <name>dejavuhuh</name>
+            <email>wuyue19970930@gmail.com</email>
+            <organization>dejavuhuh</organization>
+            <organizationUrl>https://github.com/dejavuhuh/lego</organizationUrl>
+        </developer>
+    </developers>
+
     <modules>
         <module>lego-bom</module>
         <module>lego-lang</module>
         <module>lego-file</module>
         <module>lego-rollback-sql</module>
+        <module>lego-portal</module>
+        <module>lego-base</module>
+        <module>lego-id</module>
+        <module>lego-redis</module>
+        <module>lego-spring</module>
+        <module>lego-test</module>
     </modules>
 
     <properties>

@@ -1,7 +1,7 @@
 package io.github.dejavuhuh.lego.autoconfigure;
 
-import io.github.dejavuhuh.lego.rollback.sql.RollbackSqlGenerator;
-
+import io.github.dejavuhuh.lego.base.Constants;
+import io.github.dejavuhuh.lego.rollback.sql.RollbackSQLGenerator;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +15,12 @@ import javax.sql.DataSource;
  * @author wu.yue
  * @since 2024/1/3 11:27
  */
-@Configuration
+@Configuration(Constants.BEAN_ID_PREFIX + "RollbackSqlAutoConfiguration")
 @AutoConfiguration(after = DataSourceAutoConfiguration.class)
 public class RollbackSqlAutoConfiguration {
 
-    @Bean
-    public RollbackSqlGenerator rollbackSqlGenerator(DataSource dataSource) {
-        return new RollbackSqlGenerator(dataSource);
+    @Bean(Constants.BEAN_ID_PREFIX + "RollbackSQLGenerator")
+    public RollbackSQLGenerator rollbackSQLGenerator(DataSource dataSource) {
+        return new RollbackSQLGenerator(dataSource);
     }
 }
