@@ -65,7 +65,7 @@ public class IdGeneratorTest {
         }
 
         latch.await();
-        assertThat(ids).hasSize(threads * countPerThread + 1);
+        assertThat(ids).hasSize(threads * countPerThread);
         assertThat(ids.stream().distinct().collect(Collectors.toList())).hasSize(threads * countPerThread);
 
     }
